@@ -1,0 +1,130 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 20px 50px;
+    color: white;
+    position: relative;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 25px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links a {
+    color: #e6e6e6;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(74, 74, 74, 0.8);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: #e6e6e6;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(58, 58, 58, 0.8);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Search icon */
+.search-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Mobile menu button */
+.menu-btn {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 20px;
+    }
+    
+    .menu-btn {
+        display: block;
+    }
+    
+    .nav-links {
+        position: absolute;
+        background-color: rgba(74, 74, 74, 0.9);
+        width: 100%;
+        top: 100%;
+        left: 0;
+        flex-direction: column;
+        padding: 20px;
+        display: none;
+        z-index: 100;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 10px 0;
+    }
+    
+    .dropdown-content {
+        position: relative;
+        width: 100%;
+        box-shadow: none;
+        padding-left: 20px;
+    }
+}
+
+/* Container styling - basic styling for content container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
