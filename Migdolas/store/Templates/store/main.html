@@ -12,21 +12,38 @@
     <nav class="navbar">
         <div class="menu-btn">☰</div>
         <ul class="nav-links">
-            <li><a href="#">Užsisakyti prekę</a></li>
-            <li><a href="#">Baldai</a></li>
+            <li><a href="#">Naujienos</a></li>
+            <li class="dropdown">
+                <a href="#">Baldai ▼</a>
+                <div class="dropdown-content">
+                    <a href="#">Svetainė</a>
+                    <a href="#">Miegamasis</a>
+                    <a href="#">Vaikų kambarys</a>
+                    <a href="#">Virtuvė</a>
+                    <a href="#">Valgomasis</a>
+                    <a href="#">Prieškambaris</a>
+                </div>
+            </li>
             <li><a href="#">Pagrindinis</a></li>
             <li><a href="#">Apie mus</a></li>
             <li><a href="#">Kontaktai</a></li>
             <li class="dropdown">
                 <a href="#">Daugiau ▼</a>
                 <div class="dropdown-content">
-                    <a href="#">Nuolaidos</a>
+                    <a href="#">Baldų priežiūra</a>
                     <a href="#">Pristatymas</a>
-                    <a href="#">Pagalba</a>
                 </div>
             </li>
         </ul>
-        <div class="search-icon">⚲</div>
+        <div class="search-container">
+            <button class="search-toggle">
+                <span class="search-icon">⚲</span>
+            </button>
+            <form action="{% url 'search' %}" method="get" class="search-form">
+                <input type="text" placeholder="Paieška..." name="q" class="search-input">
+                <button type="submit" class="search-submit">⚲</button>
+            </form>
+        </div>
     </nav>
     
     <div class="container">
@@ -36,5 +53,3 @@
     </div>
     
     <script src="{% static 'js/navbar.js' %}"></script>
-</body>
-</html>
