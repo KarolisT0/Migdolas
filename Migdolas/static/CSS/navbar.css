@@ -1,181 +1,76 @@
+/* Base Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
-    padding: 20px 50px;
-    color: white;
-    position: relative;
+    padding: 1rem 2rem;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    font-family: 'Arial', sans-serif;
 }
 
-.nav-links {
+/* Logo */
+.logo a {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* Navigation Menu */
+.nav-menu {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
+    gap: 1.5rem;
 }
 
-.nav-links li {
-    margin-right: 25px;
-}
-
-.nav-links li:last-child {
-    margin-right: 0;
-}
-
-.nav-links a {
-    color: #e6e6e6;
+.nav-menu li a {
     text-decoration: none;
-    font-size: 14px;
+    color: #333;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 0.9rem;
     transition: color 0.3s;
-    font-weight: bold;
 }
 
-.nav-links a:hover {
-    color: #ffffff;
+.nav-menu li a:hover {
+    color: #0066cc;
 }
 
-/* Dropdown styling */
+/* Dropdown Menu */
 .dropdown {
     position: relative;
-    display: inline-block;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgba(74, 74, 74, 0.8);
+    background: #fff;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     z-index: 1;
-    top: 100%;
-    left: 0;
-}
-
-.dropdown-content a {
-    color: #e6e6e6;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: rgba(58, 58, 58, 0.8);
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Search Container */
-.search-container {
-    position: relative;
-    margin-left: auto;
+.dropdown-content a {
+    padding: 0.75rem 1rem;
+    display: block;
+    text-transform: capitalize;
 }
 
-/* Search Toggle Button (visible icon) */
-.search-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    font-size: 1.2rem;
-}
-
-/* Search Form (hidden by default) */
-.search-form {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
+/* Icons */
+.nav-icons {
     display: flex;
-    width: 0;
-    overflow: hidden;
-    transition: width 0.3s ease;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    gap: 1rem;
 }
 
-/* When search is active */
-.search-container.active .search-form {
-    width: 250px;
-    padding: 5px;
-}
-
-.search-input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 8px 15px;
-    font-size: 14px;
-}
-
-.search-submit {
-    background: none;
-    border: none;
+.search-icon {
+    font-weight: bold;
     cursor: pointer;
-    padding: 0 10px;
-    font-size: 1rem;
-    color: #555;
-}
-
-/* Hide the toggle icon when search is active */
-.search-container.active .search-toggle {
-    display: none;
-}
-
-/* Mobile menu button */
-.menu-btn {
-    display: none;
-    cursor: pointer;
-    font-size: 24px;
-}
-
-/* Responsive design */
-@media screen and (max-width: 768px) {
-    .navbar {
-        padding: 20px;
-    }
-    
-    .menu-btn {
-        display: block;
-    }
-    
-    .nav-links {
-        position: absolute;
-        background-color: rgba(74, 74, 74, 0.9);
-        width: 100%;
-        top: 100%;
-        left: 0;
-        flex-direction: column;
-        padding: 20px;
-        display: none;
-        z-index: 100;
-    }
-    
-    .nav-links.active {
-        display: flex;
-    }
-    
-    .nav-links li {
-        margin: 10px 0;
-    }
-    
-    .dropdown-content {
-        position: relative;
-        width: 100%;
-        box-shadow: none;
-        padding-left: 20px;
-    }
-}
-
-/* Container styling - basic styling for content container */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
 }

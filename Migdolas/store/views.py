@@ -1,4 +1,9 @@
 from django.shortcuts import render
+from django.db.models import Q
+from store.models import Product
+
+def home(request):
+    return render(request, 'store/main.html')
 
 def store(request):
     context = { }
@@ -14,13 +19,15 @@ def checkout(request):
 
 def search(request):
     query = request.GET.get('q', '')
-    results = []
+    results = Product.objects.all()
+    
     if query:
-        results = Product.objects.filter(
-            models.Q(name__icontains=query) | 
-            models.Q(description__icontains=query)
+        results = results.filter(
+            Q(name__icontains=query) | 
+            Q(description__icontains=query)
         )
-    return render(request, 'shop/search_results.html', {
+    
+    return render(request, 'store/search_results.html', {
         'results': results,
         'query': query
     })
